@@ -7,7 +7,6 @@ public class FireAtMousePos : MonoBehaviour
     //raycast and lazer things
     public float DamagePerShot = 10f;
     public Transform FirePoint;
-    private Vector3 FirePointV3;
     private Vector3 MPOSHOLD;
     private Vector2 MousePos;
 
@@ -25,8 +24,7 @@ public class FireAtMousePos : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        FirePointV3 = FirePoint.transform.InverseTransformPoint(transform.position);
-        
+         
         MPOSHOLD = new Vector3(Input.mousePosition.x,Input.mousePosition.y,Camera.main.nearClipPlane);
         testV = Camera.main.ScreenToWorldPoint(MPOSHOLD);
 
