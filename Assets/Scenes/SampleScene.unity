@@ -281,7 +281,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8eadc702cb759345b43bfb2b128d7a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DamagePerShot: 10
+  DamagePerShot: 100
   FirePoint: {fileID: 1859947565}
   testV: {x: 0, y: 0, z: 0}
   line: {fileID: 819821618}

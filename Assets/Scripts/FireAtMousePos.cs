@@ -8,7 +8,6 @@ public class FireAtMousePos : MonoBehaviour
     public float DamagePerShot = 10f;
     public Transform FirePoint;
     private Vector3 FirePointV3;
-    private Vector2 FirePointV2;
     private Vector3 MPOSHOLD;
     private Vector2 MousePos;
 
@@ -27,8 +26,7 @@ public class FireAtMousePos : MonoBehaviour
     void Update()
     {
         FirePointV3 = FirePoint.transform.InverseTransformPoint(transform.position);
-        FirePointV2 = new Vector2(FirePointV3.x, FirePointV3.y);
-
+        
         MPOSHOLD = new Vector3(Input.mousePosition.x,Input.mousePosition.y,Camera.main.nearClipPlane);
         testV = Camera.main.ScreenToWorldPoint(MPOSHOLD);
 
@@ -78,10 +76,10 @@ public class FireAtMousePos : MonoBehaviour
         line.enabled = true;
         yield return new WaitForSeconds(0.02f);
         line.enabled = false;
-        if (HitInfo)
-        {
-            Debug.Log(HitInfo.transform.name);
-        }
+        //if (HitInfo)
+        //{
+        //    Debug.Log(HitInfo.transform.name);
+        //}
 
     }
 }
