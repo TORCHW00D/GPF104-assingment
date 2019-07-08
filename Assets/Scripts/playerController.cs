@@ -42,7 +42,7 @@ public class playerController : MonoBehaviour
         {
             horizontalMovement = moveSpeed * 20 * Time.deltaTime;
         }
-        if (Input.GetKeyDown(KeyCode.W) && _jumpsLeft >= 1)
+        if (Input.GetKeyDown(KeyCode.Space) && _jumpsLeft >= 1)
         {
             verticalMovement = moveSpeed * 500 * Time.deltaTime;
             _jumpsLeft--;
