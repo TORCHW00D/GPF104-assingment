@@ -53,7 +53,7 @@ public class FireAtMousePos : MonoBehaviour
     {
         RaycastHit2D HitInfo = Physics2D.Raycast(FirePoint.position, (testV - FirePoint.position),100f);
 
-        Debug.DrawRay(FirePoint.position, (testV - FirePoint.position)*10f,Color.red);
+        Debug.DrawRay(FirePoint.position, (testV - FirePoint.position),Color.red);
 
         if (HitInfo)
         {
