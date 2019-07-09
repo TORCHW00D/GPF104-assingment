@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+//touch class
 public class player2Controls : MonoBehaviour
 {
     //Movement Vars

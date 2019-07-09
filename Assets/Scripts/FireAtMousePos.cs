@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+//touch class
 public class FireAtMousePos : MonoBehaviour
 {
     //raycast and lazer things
