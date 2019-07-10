@@ -20,6 +20,11 @@ public class playerController : MonoBehaviour
         }
     }
 
+    public void TakeDamage(float damage)
+    {
+        playerHealth -= damage;
+    }
+
     // Update is called once per frame
     void FixedUpdate()
     {

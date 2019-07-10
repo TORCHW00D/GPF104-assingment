@@ -22,12 +22,12 @@ public class player2Controls : MonoBehaviour
             Debug.LogError("PLAYER: can't find rigidbody");
         }
     }
-
-
+        
+    public void TakeDamage(float damage)
+    {
+        playerHealth -= damage;
+    }
     
-
-
-
     // Update is called once per frame
     void FixedUpdate()
     {
