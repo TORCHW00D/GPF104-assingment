@@ -45,6 +45,7 @@ public class FireAtMousePos : MonoBehaviour
         mouse_pos.x = mouse_pos.x - object_pos.x;
         mouse_pos.y = mouse_pos.y - object_pos.y;
         angle = Mathf.Atan2(mouse_pos.y, mouse_pos.x) * Mathf.Rad2Deg;
+        angle = angle - 180.0f;
         transform.rotation = (Quaternion.Euler(new Vector3(0, 0, angle)));
 
     }
