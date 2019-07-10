@@ -100,6 +100,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ae5c2f508436474f864a0870545a6f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Full: {fileID: 21300000, guid: 8ae4aa79e27bc7b46ac05f842d4c13db, type: 3}
+  Half: {fileID: 21300000, guid: fd232aa91a3657245b8ece15b8a4e85b, type: 3}
+  Broken: {fileID: 21300000, guid: 8983261655184144b89a756529adeff8, type: 3}
 --- !u!212 &212928669958575306
 SpriteRenderer:
   m_ObjectHideFlags: 1
