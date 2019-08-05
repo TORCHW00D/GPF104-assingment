@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class playerController : MonoBehaviour
 {
@@ -9,11 +11,15 @@ public class playerController : MonoBehaviour
     public float moveSpeed = 5.0f;
     public float playerHealth = 100.00f;
     public int jumpsLeft = 2;
+    public Slider HealthBar;
+
     private int _jumpsLeft;
     private bool onGround;
     private Rigidbody2D PlayerChar;
-
-
+    private Vector3 StartPos;
+    private float horizontalMovement = 0.0f;
+    private float verticalMovement = 0.0f;
+    private Vector2 movementDirection;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,13 +29,34 @@ public class playerController : MonoBehaviour
         {
             Debug.LogError("PLAYER: can't find rigidbody");
         }
+        StartPos = transform.position;
+        HealthBar.value = playerHealth;
     }
 
     public void TakeDamage(float damage)
     {
+        HealthBar.value = playerHealth;
         playerHealth -= damage;
+        if (playerHealth <= 0)
+        {
+            moveToStart();
+            playerHealth = 100.0f;
+        }
     }
 
+    public void moveToStart()
+    {
+        transform.position = StartPos;
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "DeathZone")
+        {
+            Debug.Log("hit death zone!");
+            moveToStart();
+        }
+
+    }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -50,10 +77,9 @@ public class playerController : MonoBehaviour
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
-        float horizontalMovement = 0.0f;
-        float verticalMovement = 0.0f;
+        
         if (Input.GetKey(KeyCode.A))
         {
             horizontalMovement = -moveSpeed * 20 * Time.deltaTime;
@@ -66,7 +92,7 @@ public class playerController : MonoBehaviour
         {
             if (_jumpsLeft > 0)
             {
-                verticalMovement = moveSpeed * 500 * Time.deltaTime;
+                verticalMovement = moveSpeed * 750 * Time.deltaTime;
                // Debug.Log(_jumpsLeft + " / " + jumpsLeft);
                 _jumpsLeft--;
                // Debug.Log(_jumpsLeft + " / " + jumpsLeft + " post index");
@@ -76,16 +102,28 @@ public class playerController : MonoBehaviour
                // Debug.Log("No Jumps left!");
             }
 
+        } else
+        {
+            verticalMovement = 0;
         }
         if (Input.GetKeyDown(KeyCode.S))
         {
             verticalMovement = -moveSpeed * 1500 * Time.deltaTime;
         }
-
-        Vector2 movementDirection = new Vector2(horizontalMovement, verticalMovement);
-        PlayerChar.AddForce(movementDirection);
+        //print(GetComponent<Rigidbody2D>().velocity);
+        if (GetComponent<Rigidbody2D>().velocity.y < -1f)
+        {
+            GetComponent<Rigidbody2D>().AddForce(new Vector2(0,-25));
+        }
+        movementDirection = new Vector2(horizontalMovement, verticalMovement);
+        horizontalMovement = 0;
+        verticalMovement = 0;
 
         onGround = false;
         
+    }
+    private void FixedUpdate()
+    {
+        PlayerChar.AddForce(movementDirection);
     }
 }

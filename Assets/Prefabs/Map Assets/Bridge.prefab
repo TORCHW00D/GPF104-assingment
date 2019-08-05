@@ -72,7 +72,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 1803880433326750}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: f4a115a81a78d5b48b9066a03b320370, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -101,10 +101,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Full: {fileID: 21300000, guid: 8ae4aa79e27bc7b46ac05f842d4c13db, type: 3}
-  Most: {fileID: 21300000, guid: 8ae4aa79e27bc7b46ac05f842d4c13db, type: 3}
   Half: {fileID: 21300000, guid: 8ae4aa79e27bc7b46ac05f842d4c13db, type: 3}
-  Quater: {fileID: 21300000, guid: 8ae4aa79e27bc7b46ac05f842d4c13db, type: 3}
-  Break: {fileID: 21300000, guid: 8ae4aa79e27bc7b46ac05f842d4c13db, type: 3}
+  Broken: {fileID: 0}
 --- !u!212 &212716413091669538
 SpriteRenderer:
   m_ObjectHideFlags: 1
