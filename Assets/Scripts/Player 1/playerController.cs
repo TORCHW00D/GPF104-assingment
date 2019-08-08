@@ -55,7 +55,21 @@ public class playerController : MonoBehaviour
             Debug.Log("hit death zone!");
             moveToStart();
         }
-
+        if (collision.gameObject.tag == "EndPractice")
+        {
+            Debug.Log("Level completed!!");
+            SceneManager.LoadScene("Level1");
+        }
+        if (collision.gameObject.tag == "EndLvl1")
+        {
+            Debug.Log("Level completed!!");
+            SceneManager.LoadScene("Level2");
+        }
+        if (collision.gameObject.tag == "EndLvl2")
+        {
+            Debug.Log("Level completed!!");
+            SceneManager.LoadScene("Level3");
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -92,7 +106,7 @@ public class playerController : MonoBehaviour
         {
             if (_jumpsLeft > 0)
             {
-                verticalMovement = moveSpeed * 750 * Time.deltaTime;
+                PlayerChar.velocity += new Vector2(0, moveSpeed/3);
                // Debug.Log(_jumpsLeft + " / " + jumpsLeft);
                 _jumpsLeft--;
                // Debug.Log(_jumpsLeft + " / " + jumpsLeft + " post index");
