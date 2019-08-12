@@ -4,9 +4,15 @@ using UnityEngine;
 
 public class EnemyScript : MonoBehaviour
 {
+    private Transform Chased;
     public float health = 50f;
     public float damage = 10f;
 
+    private int Distance;
+    private void Start()
+    {
+        Chased = GameObject.Find("Main char").GetComponent<Transform>();
+    }
     public void TakeDamage(float damageTaken)
     {
         health -= damageTaken;
@@ -40,6 +46,8 @@ public class EnemyScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        Vector3 TowardsHere = Vector3.MoveTowards(gameObject.transform.position, Chased.transform.position, 10 * Time.deltaTime);
+        transform.position =  new Vector2(TowardsHere.x, gameObject.transform.position.y);
+       
     }
 }

@@ -22,7 +22,7 @@ public class FireAtMousePos : MonoBehaviour
 
 
     // Update is called once per frame
-    void Update()
+    void LateUpdate()
     {
          
         MPOSHOLD = new Vector3(Input.mousePosition.x,Input.mousePosition.y,Camera.main.nearClipPlane);
@@ -54,7 +54,7 @@ public class FireAtMousePos : MonoBehaviour
     {
         RaycastHit2D HitInfo = Physics2D.Raycast(FirePoint.position, (testV - FirePoint.position),100f);
 
-        Debug.DrawRay(FirePoint.position, (testV - FirePoint.position)*10f,Color.red);
+        Debug.DrawRay(FirePoint.position, (testV - FirePoint.position),Color.red);
 
         if (HitInfo)
         {
@@ -71,6 +71,15 @@ public class FireAtMousePos : MonoBehaviour
             line.SetPosition(0, FirePoint.position);
             line.SetPosition(1, testV);
 
+        }
+        if (HitInfo)
+        {
+            if (HitInfo.transform.tag == "Destructable")
+            {
+                Debug.Log("Hit");
+                BridgeControl damagable = HitInfo.transform.GetComponent<BridgeControl>();
+                damagable.DamageTaken();
+            }
         }
         line.enabled = true;
         yield return new WaitForSeconds(0.02f);

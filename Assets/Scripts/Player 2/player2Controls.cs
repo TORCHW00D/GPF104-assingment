@@ -6,7 +6,7 @@ public class player2Controls : MonoBehaviour
 {
     //Movement Vars
     public float moveSpeed = 5.0f;
-    public float playerHealth = 100.00f;
+    public float playerHealth = 50.00f;
     public int jumpsLeft = 2;
     public Slider HealthBar;
 
@@ -63,13 +63,13 @@ public class player2Controls : MonoBehaviour
         //LookAtMyMouse();
        
 
-        if (Input.GetKey(KeyCode.Q))
+        if (Input.GetKey(KeyCode.A) && (Input.GetKey(KeyCode.LeftShift)))
         {
-            horizontalMovement = -moveSpeed * 20 * Time.deltaTime;
+            horizontalMovement = -moveSpeed * 30 * Time.deltaTime;
         }
-        if (Input.GetKey(KeyCode.E))
+        if (Input.GetKey(KeyCode.D) && (Input.GetKey(KeyCode.LeftShift)))
         {
-            horizontalMovement = moveSpeed * 20 * Time.deltaTime;
+            horizontalMovement = moveSpeed * 30 * Time.deltaTime;
         }
         //if (Input.GetKey(KeyCode.UpArrow))
         //{

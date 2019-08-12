@@ -7,13 +7,21 @@ public class MenuButtons : MonoBehaviour {
 
     public GameObject MenuPanel;
     public GameObject LevelSelectPanel;
+    public GameObject InstructionsPanel;
 
 	// Use this for initialization
 	void Start () {
         MenuPanel.SetActive(true);
         LevelSelectPanel.SetActive(false);
+        InstructionsPanel.SetActive(true);
+        
 	}
 	
+    public void CloseInstructions()
+    {
+        InstructionsPanel.SetActive(false);
+    }
+
 	public void ShowLevelPanel()
     {
         LevelSelectPanel.SetActive(true);
@@ -43,5 +51,10 @@ public class MenuButtons : MonoBehaviour {
     public void Level3Scene()
     {
         SceneManager.LoadScene("Level3");
+    }
+
+    public void QuitGame()
+    {
+        Application.Quit();
     }
 }

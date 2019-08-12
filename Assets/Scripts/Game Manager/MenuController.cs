@@ -9,6 +9,7 @@ public class MenuController : MonoBehaviour {
     public GameObject MainUIPanel;
     public GameObject PauseMenu;
     public Transform LevelsButton;
+    public GameObject InstructionPanel;
     private Button LevelSelectButton;
 
 	// Use this for initialization
@@ -16,11 +17,20 @@ public class MenuController : MonoBehaviour {
         Time.timeScale = 1.0f;
         MainUIPanel.SetActive(true);
         PauseMenu.SetActive(false);
-        
+        InstructionPanel.SetActive(false);
         
 
     }
 	
+   public void ShowInstructions()
+    {
+        InstructionPanel.SetActive(true);
+    }
+    public void HideInstructions()
+    {
+        InstructionPanel.SetActive(false);
+    }
+    
     public void GamePaused()
     {
         Time.timeScale = 0.0f;

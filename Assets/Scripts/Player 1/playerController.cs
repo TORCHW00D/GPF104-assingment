@@ -52,7 +52,7 @@ public class playerController : MonoBehaviour
     {
         if (collision.gameObject.tag == "DeathZone")
         {
-            Debug.Log("hit death zone!");
+            //Debug.Log("hit death zone!");
             moveToStart();
         }
         if (collision.gameObject.tag == "EndPractice")
@@ -94,11 +94,11 @@ public class playerController : MonoBehaviour
     void Update()
     {
         
-        if (Input.GetKey(KeyCode.A))
+        if (Input.GetKey(KeyCode.A) && !(Input.GetKey(KeyCode.LeftShift)))
         {
             horizontalMovement = -moveSpeed * 20 * Time.deltaTime;
         }
-        if (Input.GetKey(KeyCode.D))
+        if (Input.GetKey(KeyCode.D) && !(Input.GetKey(KeyCode.LeftShift)))
         {
             horizontalMovement = moveSpeed * 20 * Time.deltaTime;
         }
