@@ -9,6 +9,7 @@ public class FireAtMousePos : MonoBehaviour
     public Transform FirePoint;
     private Vector3 MPOSHOLD;
     private Vector2 MousePos;
+    public AudioSource tickSource;
 
     public Vector3 testV = Vector3.zero;
     public LineRenderer line;
@@ -20,7 +21,10 @@ public class FireAtMousePos : MonoBehaviour
     private Vector3 object_pos;
     private float angle;
 
-
+    private void Start()
+    {
+        tickSource = GetComponent<AudioSource> ();
+    }
     // Update is called once per frame
     void LateUpdate()
     {
@@ -33,6 +37,7 @@ public class FireAtMousePos : MonoBehaviour
         LookAtMyMouse();
         if (Input.GetMouseButtonDown(0))
         {
+            tickSource.Play(); 
             StartCoroutine(Shoot());
         }
 

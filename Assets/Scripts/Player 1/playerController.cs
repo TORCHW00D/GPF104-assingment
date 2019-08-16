@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class playerController : MonoBehaviour
 {
     public LayerMask ground;
-
+    public AudioSource characterFalls;
     public float moveSpeed = 5.0f;
     public float playerHealth = 100.00f;
     public int jumpsLeft = 2;
@@ -24,6 +24,7 @@ public class playerController : MonoBehaviour
     void Start()
     {
         //_jumpsLeft = jumpsLeft;
+        characterFalls = GetComponent<AudioSource>(); 
         PlayerChar = gameObject.GetComponent<Rigidbody2D>();
         if (PlayerChar == null)
         {
@@ -52,6 +53,8 @@ public class playerController : MonoBehaviour
     {
         if (collision.gameObject.tag == "DeathZone")
         {
+
+            characterFalls.Play();
             //Debug.Log("hit death zone!");
             moveToStart();
         }
