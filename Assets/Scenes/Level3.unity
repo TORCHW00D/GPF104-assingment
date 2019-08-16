@@ -1258,6 +1258,16 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 224228832048745936, guid: a559fa60b7a55404eafd96d0a8ddfb30,
+        type: 2}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224462749437571462, guid: a559fa60b7a55404eafd96d0a8ddfb30,
+        type: 2}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a559fa60b7a55404eafd96d0a8ddfb30, type: 2}
   m_IsPrefabAsset: 0
@@ -13373,7 +13383,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: ff34874c6e50b384d8c51873ee896b2a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -13409,18 +13419,21 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0.22, y: 0.41}
-      - {x: 0.14999999, y: 0.48999998}
-      - {x: -0.049999997, y: 0.59}
+    - - {x: 0.33769226, y: 0.3585099}
+      - {x: 0.3486061, y: 0.38701987}
+      - {x: 0.37413406, y: 0.60434186}
+      - {x: 0.15595245, y: 0.82538855}
+      - {x: -0.08677673, y: 0.7812489}
+      - {x: -0.36683273, y: 0.7641393}
       - {x: -0.19999999, y: 0.59}
-      - {x: -0.22999999, y: 0.55}
+      - {x: -0.3697586, y: 0.75596035}
       - {x: -0.42999998, y: -0.13}
       - {x: -0.42999998, y: -0.32}
       - {x: -0.29999998, y: -0.38}
       - {x: -0.19999999, y: -0.38}
       - {x: -0.14999999, y: -0.34}
       - {x: 0.08, y: 0.03}
-      - {x: 0.22, y: 0.25}
+      - {x: 0.35240555, y: 0.30884588}
 --- !u!114 &1648096124
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13429,7 +13442,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1648096120}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0752bddaf4f539047a0a8fddeb8e7260, type: 3}
+  m_Script: {fileID: 11500000, guid: 012261bfec22aad46b1d160dfa91b410, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1697521829

@@ -73,6 +73,12 @@ public class playerController : MonoBehaviour
             Debug.Log("Level completed!!");
             SceneManager.LoadScene("Level3");
         }
+        if (collision.gameObject.tag == "EndLvl3")
+        {
+            Debug.Log("Level completed!!");
+            SceneManager.LoadScene("MAIN MENU");
+        }
+
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
