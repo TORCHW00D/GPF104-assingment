@@ -145,8 +145,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\nHow to Play\n\n\t- \"A\" and \"D\" Controls the Main Character\n\t- Pressing
-    Shift and \"A\" or \"D\" controls \n\t\tthe Second Character (The Bunny)\n \t-
+  m_Text: "\nHow to Play\n\n\t- \"A\" and \"D\" controls the Main Character\n\t- Holding
+    Shift with \"A\" or \"D\" controls \n\t\tthe Second Character (The Bunny)\n \t-
     Mouse to Aim, Left Click to Fire\n\t - \"P\" to Pause the Game!"
 --- !u!114 &114547160622309220
 MonoBehaviour:
